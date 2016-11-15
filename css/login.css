@@ -1,0 +1,142 @@
+/*css reset*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+  margin: 0;
+  padding: 0;
+}
+body,
+button, input, select, textarea /* for ie */ {
+  font: 14px tahoma, arial, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+ul, ol { list-style: none; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+table { border-collapse: collapse; border-spacing: 0; }
+
+body{
+	background: url("http://tu.ihuan.me/api/bing/go") center center no-repeat fixed;
+	background-size: cover;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: center;
+	padding-top: 10%;
+	
+}
+
+.login form{
+	width: 300px;
+	margin: 10% auto;
+	padding: 5%;
+	border: 1px white solid;
+	border-radius: 6px;
+	box-shadow: 0 0 6px lightskyblue;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.label label,.label input,.code,p{
+	flex: 1;
+}
+p{
+	color: red;
+}
+.icon-user,.icon-lock,.icon-key{
+	width: 30px !important;
+	height: 30px !important;
+	line-height: 30px !important;
+	text-align: center;
+	margin-right: -5px;
+	margin-bottom: 2px;
+	display: inline-block !important;
+	border: 1px white solid;
+	background-color: transparent;
+	position: relative;
+	/*bottom: 1px;*/
+	color: white;
+	border-radius: 6px 0 0 6px;
+}
+.label input,.label span{
+	border: 1px white solid;
+	border-radius: 0 6px 6px 0;
+	height: 30px;
+	line-height: 30px;
+	margin: 10px;
+	padding: 0px 5px;
+}
+.label input:focus{
+	box-shadow: 0 0 3px cornflowerblue;
+}
+
+#account,#password,#code{
+	margin-left: 0px;
+}
+.label img{
+	height: 30px;
+	margin-right: 5px;
+	flex: 2;
+}
+#codeBox{
+	margin-left: 53px;
+}
+#codeBox input{
+	width: 30%;
+	flex: 1;
+	margin-right: 0px;
+}
+#codeBox img{
+	flex: 1;
+	vertical-align: middle;
+	margin-bottom: 5px;
+}
+.btn{
+	width: 80px;
+	height: 30px !important;
+  line-height: 20px !important;
+	border-radius: 6px !important;
+	color: white;
+	border: none !important;
+}
+
+.btn-green{
+	background-color: greenyellow;
+}
+.btn-green:active{
+	background-color: darkgreen;
+}
+.btn-red{
+	background-color: red;
+}
+.btn-red:active{
+	background-color: darkred;
+}
+@media only screen and (max-width: 1080px) {
+	/*.login{
+		width: 100%;
+	}*/
+	.login form{
+		width: 80%;
+		flex-direction: column;
+		align-items: center;
+	}
+	#codeBox{
+		margin-left: 22px;
+	}
+	#codeBox input{
+		width: 46%;
+	}
+	.icon-user,.icon-lock,.icon-key{
+		bottom: 0px;
+	}
+}
