@@ -34,8 +34,8 @@ body{
 }
 
 .login form{
-	width: 300px;
-	margin: 10% auto;
+	width: 30%;
+	margin: 3% auto;
 	padding: 5%;
 	border: 1px white solid;
 	border-radius: 6px;
@@ -45,7 +45,11 @@ body{
 	flex-direction: row;
 	flex-wrap: wrap;
 }
-
+.label{
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
 .label label,.label input,.code,p{
 	flex: 1;
 }
@@ -53,60 +57,61 @@ p{
 	color: red;
 }
 .icon-user,.icon-lock,.icon-key{
-	width: 30px !important;
+	width: 10% !important;
 	height: 30px !important;
 	line-height: 30px !important;
 	text-align: center;
-	margin-right: -5px;
-	margin-bottom: 2px;
+	top: 20%;
+	left: 20%;
+	position: absolute;
 	display: inline-block !important;
 	border: 1px white solid;
 	background-color: transparent;
-	position: relative;
-	/*bottom: 1px;*/
 	color: white;
 	border-radius: 6px 0 0 6px;
 }
-.label input,.label span{
+.label input{
+	width: 50%;
 	border: 1px white solid;
 	border-radius: 0 6px 6px 0;
 	height: 30px;
 	line-height: 30px;
 	margin: 10px;
 	padding: 0px 5px;
+	margin-left: 18%;
 }
 .label input:focus{
 	box-shadow: 0 0 3px cornflowerblue;
 }
 
 #account,#password,#code{
-	margin-left: 0px;
+	/*margin-left: 0px;*/
 }
 .label img{
 	height: 30px;
 	margin-right: 5px;
 	flex: 2;
+	width: 25%;
 }
-#codeBox{
-	margin-left: 53px;
-}
+
 #codeBox input{
-	width: 30%;
+	width: 25%;
 	flex: 1;
 	margin-right: 0px;
 }
 #codeBox img{
 	flex: 1;
 	vertical-align: middle;
-	margin-bottom: 5px;
+	margin-bottom: 2%;
 }
 .btn{
-	width: 80px;
+	width: 20% !important;
 	height: 30px !important;
   line-height: 20px !important;
 	border-radius: 6px !important;
 	color: white;
 	border: none !important;
+	margin-left: 10% !important;
 }
 
 .btn-green{
@@ -121,22 +126,48 @@ p{
 .btn-red:active{
 	background-color: darkred;
 }
-@media only screen and (max-width: 1080px) {
-	/*.login{
-		width: 100%;
-	}*/
+
+
+@media only screen and (max-width: 540px) {
 	.login form{
 		width: 80%;
-		flex-direction: column;
-		align-items: center;
 	}
-	#codeBox{
-		margin-left: 22px;
+	#codeBox img{
+		margin-bottom: 0%;
 	}
-	#codeBox input{
-		width: 46%;
+	.btn{
+		width: 60% !important;
+	}
+}
+@media only screen and (min-width: 400px) and (max-width: 540px) {
+	.icon-user,.icon-lock,.icon-key{
+		left: 21%;
+	}
+}
+@media only screen and (min-width: 541px) and (max-width: 640px) {
+	.login form{
+		width: 70%;
 	}
 	.icon-user,.icon-lock,.icon-key{
-		bottom: 0px;
+		left: 22%;
+	}
+	.btn{
+		width: 60% !important;
+	}
+}
+@media only screen and (min-width: 641px) and (max-width: 1011px) {
+	.login form{
+		width: 60%;
+	}
+	.icon-user,.icon-lock,.icon-key{
+		left: 22%;
+	}
+	.btn{
+		width: 60% !important;
+	}
+}
+@media only screen and (min-width: 1012px) {
+	.icon-user,.icon-lock,.icon-key{
+		left: 21%;
 	}
 }
