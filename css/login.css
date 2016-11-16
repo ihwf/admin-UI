@@ -183,6 +183,21 @@ p{
 	}
 	.btn{
 		width: 60% !important;
+	}	
+	#tip1::before,#tip2::before,#tip3::before{
+		border: 6px solid;
+		border-color: transparent;
+		border-right-color: none;
+		border-top-color: red;
+		top: 20px;
+		left: 43%;
+	}
+	#tip1,#tip2,#tip3{
+		background-color: red;
+		height: 20px;
+		line-height: 20px;
+		top: -18px;
+		left: 25%;
 	}
 }
 @media only screen and (min-width: 400px) and (max-width: 540px) {
