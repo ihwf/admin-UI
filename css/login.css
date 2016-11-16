@@ -84,16 +84,62 @@ p{
 	box-shadow: 0 0 3px cornflowerblue;
 }
 
-#account,#password,#code{
-	/*margin-left: 0px;*/
-}
 .label img{
 	height: 30px;
 	margin-right: 5px;
 	flex: 2;
 	width: 25%;
 }
-
+#tip1::before,#tip2::before,#tip3::before{
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent;
+	border-right-color: red;
+	line-height: 30px;
+	position: absolute;
+	top: 15%;
+	left: -18px;
+}
+#tip1,#tip2,#tip3{
+	width: 135px;
+	background-color: red;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 3%;
+	margin-left: 5px;
+	border-radius: 6px;
+	padding: 0 5px;
+	color: white;
+	box-shadow: 1px 1px 6px black;
+	display: none;
+}
+@keyframes tip{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+@-webkit-keyframes tip{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+@-moz-keyframes tip{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
+@keyframes notip{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}
+@-webkit-keyframes notip{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}
+@-moz-keyframes notip{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}
 #codeBox input{
 	width: 25%;
 	flex: 1;

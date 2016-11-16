@@ -8,30 +8,105 @@
 		<title>管理员登录</title>
 	</head>
 	<body>
+		
 		<div class="login">
-			<form method="post">
+			<form method="post" id="form">
 				<div class="label">
-					<p>用户名或密码错误!</p>
+					<p>账号或密码错误!</p>
 				</div>
 				
 				<div class="label">
 					<label for="account" class="icon-user"></label>
-					<input type="text" name="account" id="account" required="required" pattern="[0-9a-zA-Z]{6}" oninput="setCustomValidity('')" oninvalid="setCustomValidity('请输入6位以上的账号!')" placeholder="请输入账号"/>
+					<input type="text" name="account" id="account" placeholder="请输入账号"/>
+					<span id="tip1">请输入6位以上的账号</span>
 				</div>
 				<div class="label">
 					<label class="icon-lock" for="password"></label>
-					<input type="password" name="password" id="password" required="required" pattern="[0-9A-Za-z]{6}" oninput="setCustomValidity('')" oninvalid="setCustomValidity('请输入6位以上的密码!')" placeholder="请输入密码"/>
+					<input type="password" name="password" id="password" placeholder="请输入密码"/>
+					<span id="tip2">请输入6位以上的密码</span>
 				</div>
 				<div class="label" id="codeBox">
 					<label for="code" class="icon-key"></label>
-					<input type="text" id="code" oninput="setCustomValidity('')" required="required" oninvalid="setCustomValidity('请输入验证码!')" placeholder="验证码" />
+					<input type="text" id="code" placeholder="验证码" />
 					<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"/>
+					<span id="tip3">请输入验证码</span>
 				</div>
 				<div class="label">
-					<input type="submit" value="登录" class="btn btn-green"/>
+					<input type="submit" id="login" value="登录" class="btn btn-green"/>
 					<input type="reset" value="重置" class="btn btn-red"/>
 				</div>
 			</form>
 		</div>
 	</body>
 </html>
+
+<script type="text/javascript">
+	window.onload = function () {
+		var account = document.getElementById('account');
+		var password = document.getElementById('password');
+		var code = document.getElementById('code');
+		var login = document.getElementById('login');
+		var valid = /^\w{6,}$/;
+		
+		account.oninput = function () {
+			if(valid.exec(this.value)){
+				document.getElementById("tip1").style.display = "none";
+			}else{
+				document.getElementById("tip1").style.display = "inline-block";
+				document.getElementById("tip1").style.animation = "tip 300ms";
+				document.getElementById("tip1").style.MozAnimation = "tip 300ms";
+				document.getElementById("tip1").style.WebkitAnimation = "tip 300ms";
+				
+				
+			}
+		}
+		
+		password.oninput = function () {
+			if(valid.exec(this.value)){
+				document.getElementById("tip2").style.display = "none";
+			}else{
+				document.getElementById("tip2").style.display = "inline-block";
+				document.getElementById("tip2").style.animation = "tip 300ms";
+				document.getElementById("tip2").style.MozAnimation = "tip 300ms";
+				document.getElementById("tip2").style.WebkitAnimation = "tip 300ms";
+			}
+		}
+		
+		code.oninput = function () {
+			var valid = /\w{1}/;
+			if(valid.exec(this.value)){
+				document.getElementById("tip3").style.display = "none";
+			}else{
+				document.getElementById("tip3").style.display = "inline-block";
+				document.getElementById("tip3").style.animation = "tip 300ms";
+				document.getElementById("tip3").style.MozAnimation = "tip 300ms";
+				document.getElementById("tip3").style.WebkitAnimation = "tip 300ms";
+			}
+		}
+		
+		document.getElementById('form').onsubmit = function(){
+			var valid = /^\w{6,}$/;
+			if(!valid.exec(account.value)){
+				document.getElementById("tip1").style.display = "inline-block";
+				document.getElementById("tip1").style.animation = "tip 300ms";
+				document.getElementById("tip1").style.MozAnimation = "tip 300ms";
+				document.getElementById("tip1").style.WebkitAnimation = "tip 300ms";
+				return false;
+			}else if(!valid.exec(password.value)){
+				document.getElementById("tip2").style.display = "inline-block";
+				document.getElementById("tip2").style.animation = "tip 300ms";
+				document.getElementById("tip2").style.MozAnimation = "tip 300ms";
+				document.getElementById("tip2").style.WebkitAnimation = "tip 300ms";
+				return false;
+			}else if(!valid.exec(code.value)){
+				document.getElementById("tip3").style.display = "inline-block";
+				document.getElementById("tip3").style.animation = "tip 300ms";
+				document.getElementById("tip3").style.MozAnimation = "tip 300ms";
+				document.getElementById("tip3").style.WebkitAnimation = "tip 300ms";
+				return false;
+			}else{
+				this.submit();
+			}
+		}
+	}
+</script>
