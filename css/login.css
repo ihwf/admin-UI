@@ -24,7 +24,7 @@ button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie
 table { border-collapse: collapse; border-spacing: 0; }
 
 body{
-	background: url("http://tu.ihuan.me/api/bing/go") center center no-repeat fixed;
+	background: url("http://www.dujin.org/sys/bing/1920.php") center center no-repeat fixed;
 	background-size: cover;
 	display: flex;
 	display: -webkit-flex;
@@ -33,10 +33,16 @@ body{
 	
 }
 @keyframes form1{
-	from{margin-top: 0%;opacity: 0;}
-	to{margin-top: 3%;opacity: 1;}
+	from{margin-top: 0%;opacity: 0;-webkit-opacity: 0;}
+	to{margin-top: 3%;opacity: 1;-webkit-opacity: 1;}
 }
 @keyframes error{
+	0%{margin-left: 0;}
+	25%{margin-left: 2%;}
+	50%{margin-left: -3%;}
+	100%{margin-left: 0;}
+}
+@-webkit-keyframes error{
 	0%{margin-left: 0;}
 	25%{margin-left: 2%;}
 	50%{margin-left: -3%;}
@@ -49,6 +55,7 @@ body{
 	border: 1px white solid;
 	border-radius: 6px;
 	box-shadow: 0 0 6px lightskyblue;
+	background-color: rgba(200,200,200,.3);
 	justify-content: center;
 	display: flex;
 	flex-direction: row;
@@ -130,7 +137,15 @@ p{
 	from{opacity: 0;}
 	to{opacity: 1;}
 }
+@-webkit-keyframes tip{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
 @keyframes notip{
+	from{opacity: 1;}
+	to{opacity: 0;}
+}
+@-webkit-keyframes notip{
 	from{opacity: 1;}
 	to{opacity: 0;}
 }
@@ -152,16 +167,23 @@ p{
 	color: white;
 	border: none !important;
 	margin-left: 10% !important;
+	cursor: pointer;
 }
 
 .btn-green{
 	background-color: greenyellow;
+}
+.btn-green:hover{
+	background-color: green;
 }
 .btn-green:active{
 	background-color: darkgreen;
 }
 .btn-red{
 	background-color: red;
+}
+.btn-red:hover{
+	background-color: brown;
 }
 .btn-red:active{
 	background-color: darkred;
