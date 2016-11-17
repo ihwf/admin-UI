@@ -47,6 +47,7 @@ window.onload = function () {
 		if(checkSubmit(account,"tip1",valid) && checkSubmit(password,"tip2",valid) && checkSubmit(code,"tip3",codeValid)){
 			this.submit();
 		}else{
+			document.getElementById('login').style.animation = "error 500ms"
 			checkSubmit(account,"tip1",valid);
 			checkSubmit(password,"tip2",valid);
 			checkSubmit(code,"tip3",codeValid);
