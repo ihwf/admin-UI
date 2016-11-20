@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<title>修改用户</title>
+	</head>
+	<body>
+		<div class="content">
+			<header id="header" class="">
+				<i class="icon-align-justify nav-icon" id="open-nav"></i>
+			</header>
+			
+			<nav id="nav" class="">
+				<ul>
+					<li>
+						<a href="javascript:;" id="userManage"><span>用户管理</span><i class="icon-group"></i></a>
+						<ul id="users">
+							<li><a href="javascript:;" title="../users/" id="user"><span>普通用户</span><i class="icon-user"></i></a></li>
+							<li><a href=""><span>管理员</span><i class="icon-user-md"></i></a></li>
+						</ul>
+					</li>
+					<li><a href="javascript:;" title="../article/" id="art"><span>文章管理</span><i class="icon-file-alt icon-large"></i></a></li>
+					<li><a href="javascript:;" title="../permission/" id="per"><span>权限管理</span><i class="icon-tasks"></i></a></li>
+					<li><a href="javascript:;" title="../admin/" id="sys"><span>系统管理</span><i class="icon-cogs"></i></a></li>
+				</ul>
+			</nav>
+			
+			<article id="article" class="">
+				<div class="add-users">
+					<form method="post" id="form">
+						<div class="label">
+							<p>失败</p>
+						</div>
+						
+						<div class="label">
+							<label for="account">账号</label>
+							<input type="text" name="account" id="account" placeholder="请输入账号"/>
+							<span id="tip1">请输入6位以上的账号</span>
+						</div>
+						<div class="label">
+							<label for="password">密码</label>
+							<input type="password" name="password" id="password" placeholder="请输入密码"/>
+							<span id="tip2">请输入6位以上的密码</span>
+						</div>
+						<div class="label">
+							<input type="submit" id="login" value="提交" class="btn btn-green"/>
+							<input type="reset" value="重置" class="btn btn-red"/>
+						</div>
+					</form>
+				</div>
+			</article>
+			
+			<div id="temp" style="display: none;">	
+			</div>
+			
+			<footer>
+				<span>
+					footer
+				</span>
+			</footer>
+		</div>
+		
+	</body>
+</html>
+
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/modify.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,59 @@
+/*css reset*/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+  margin: 0;
+  padding: 0;
+}
+body,
+button, input, select, textarea /* for ie */ {
+  font: 14px tahoma, arial, \5b8b\4f53, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+ul, ol { list-style: none; }
+a { text-decoration: none; }
+a:hover { text-decoration: none; }
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+table { border-collapse: collapse; border-spacing: 0; }
+
+.btn{
+	width: 20%;
+	height: 30px !important;
+  line-height: 20px !important;
+	border-radius: 6px !important;
+	color: white;
+	border: none !important;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.btn-green{
+	background-color: greenyellow;
+}
+.btn-green:hover{
+	background-color: green;
+}
+.btn-green:active{
+	background-color: darkgreen;
+}
+.btn-red{
+	background-color: red;
+}
+.btn-red:hover{
+	background-color: brown;
+}
+.btn-red:active{
+	background-color: darkred;
+}
+@media only screen and (max-width: 350px) {
+	.btn{
+		font-size: 12px;
+	}
+}

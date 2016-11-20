@@ -1,30 +1,6 @@
-/*css reset*/
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-pre, /* text formatting elements 文本格式元素 */
-form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-th, td /* table elements 表格元素 */ {
-  margin: 0;
-  padding: 0;
-}
-body,
-button, input, select, textarea /* for ie */ {
-  font: 14px tahoma, arial, \5b8b\4f53, sans-serif;
-}
-h1, h2, h3, h4, h5, h6 { font-size: 100%; }
-address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-ul, ol { list-style: none; }
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-legend { color: #000; } /* for ie6 */
-fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-table { border-collapse: collapse; border-spacing: 0; }
 
 body{
-	background: url("http://www.dujin.org/sys/bing/1920.php") center center no-repeat fixed;
+	background: url("../img/login-bg.jpg") center center no-repeat fixed;
 	background-size: cover;
 	display: flex;
 	display: -webkit-flex;
@@ -36,17 +12,19 @@ body{
 	from{margin-top: 0%;opacity: 0;-webkit-opacity: 0;}
 	to{margin-top: 3%;opacity: 1;-webkit-opacity: 1;}
 }
+@-webkit-keyframes form1{
+	from{margin-top: 0%;-webkit-opacity: 0;}
+	to{margin-top: 3%;-webkit-opacity: 1;}
+}
 @keyframes error{
-	0%{margin-left: 0;}
-	25%{margin-left: 2%;}
-	50%{margin-left: -3%;}
-	100%{margin-left: 0;}
+	0%,100%{transform: translateX(0px);}
+	10%,30%,50%,70%,90%{transform: translateX(10px);}
+	20%,40%,60%,80%{transform: translateX(-10px);}
 }
 @-webkit-keyframes error{
-	0%{margin-left: 0;}
-	25%{margin-left: 2%;}
-	50%{margin-left: -3%;}
-	100%{margin-left: 0;}
+	0%,100%{transform: translateX(0px);}
+	10%,30%,50%,70%,90%{transform: translateX(10px);}
+	20%,40%,60%,80%{transform: translateX(-10px);}
 }
 .login form{
 	width: 30%;
@@ -61,6 +39,7 @@ body{
 	flex-direction: row;
 	flex-wrap: wrap;
 	animation: form1 1000ms;
+	-webkit-animation: form1 1000ms;
 }
 .label{
 	width: 100%;
@@ -134,20 +113,20 @@ p{
 	display: none;
 }
 @keyframes tip{
-	from{opacity: 0;}
-	to{opacity: 1;}
+	from{opacity: 0;-webkit-opacity: 0;}
+	to{opacity: 1;-webkit-opacity: 1;}
 }
 @-webkit-keyframes tip{
-	from{opacity: 0;}
-	to{opacity: 1;}
+	from{opacity: 0;-webkit-opacity: 0;}
+	to{opacity: 1;-webkit-opacity: 1;}
 }
 @keyframes notip{
-	from{opacity: 1;}
-	to{opacity: 0;}
+	from{opacity: 1;-webkit-opacity: 1;}
+	to{opacity: 0;-webkit-opacity: 0;}
 }
 @-webkit-keyframes notip{
-	from{opacity: 1;}
-	to{opacity: 0;}
+	from{opacity: 1;-webkit-opacity: 1;}
+	to{opacity: 0;-webkit-opacity: 0;}
 }
 #codeBox input{
 	width: 25%;
@@ -161,34 +140,8 @@ p{
 }
 .btn{
 	width: 20% !important;
-	height: 30px !important;
-  line-height: 20px !important;
-	border-radius: 6px !important;
-	color: white;
-	border: none !important;
 	margin-left: 10% !important;
-	cursor: pointer;
 }
-
-.btn-green{
-	background-color: greenyellow;
-}
-.btn-green:hover{
-	background-color: green;
-}
-.btn-green:active{
-	background-color: darkgreen;
-}
-.btn-red{
-	background-color: red;
-}
-.btn-red:hover{
-	background-color: brown;
-}
-.btn-red:active{
-	background-color: darkred;
-}
-
 
 @media only screen and (max-width: 540px) {
 	.login form{

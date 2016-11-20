@@ -3,10 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-		<link rel="stylesheet" type="text/css" href="css/common.css"/>
-		<link rel="stylesheet" type="text/css" href="css/index.css"/>
-		<title>后台管理</title>
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<title>用户管理</title>
 	</head>
 	<body>
 		<div class="content">
@@ -19,19 +19,18 @@
 					<li>
 						<a href="javascript:;" id="userManage"><span>用户管理</span><i class="icon-group"></i></a>
 						<ul id="users">
-							<li><a href="javascript:;" title="users/" id="user"><span>普通用户</span><i class="icon-user"></i></a></li>
+							<li><a href="javascript:;" title="../users/" id="user"><span>普通用户</span><i class="icon-user"></i></a></li>
 							<li><a href=""><span>管理员</span><i class="icon-user-md"></i></a></li>
 						</ul>
 					</li>
-					<li><a href="javascript:;" title="article/" id="art"><span>文章管理</span><i class="icon-file-alt icon-large"></i></a></li>
-					<li><a href="javascript:;" title="permission/" id="per"><span>权限管理</span><i class="icon-tasks"></i></a></li>
-					<li><a href="javascript:;" title="admin/" id="sys"><span>系统管理</span><i class="icon-cogs"></i></a></li>
+					<li><a href="javascript:;" title="../article/" id="art"><span>文章管理</span><i class="icon-file-alt icon-large"></i></a></li>
+					<li><a href="javascript:;" title="../permission/" id="per"><span>权限管理</span><i class="icon-tasks"></i></a></li>
+					<li><a href="javascript:;" title="../admin/" id="sys"><span>系统管理</span><i class="icon-cogs"></i></a></li>
 				</ul>
 			</nav>
 			
-			<article id="article" class="">
-				
-				<!--<div class="users-table">
+			<article id="article">
+				<div class="users-table">
 					<div class="username">
 						用户名
 					</div>
@@ -53,7 +52,7 @@
 					</div>
 					
 					<div class="operate">
-						<a href="" class="btn btn-green">修改</a>
+						<a href="modify.html?id=1" class="btn btn-green">修改</a>
 						<a href="" class="btn btn-red">删除</a>
 					</div>
 					
@@ -66,10 +65,10 @@
 					</div>
 					
 					<div class="operate">
-						<a href="users/modify.html" class="btn btn-green">修改</a>
-						<a href="javascript:;" class="btn btn-red" id="c">删除</a>
+						<a href="modify.html?id=2" class="btn btn-green">修改</a>
+						<a href="" class="btn btn-red">删除</a>
 					</div>
-				</div>-->
+				</div>
 			</article>
 			
 			<div id="temp" style="display: none;">	
@@ -85,4 +84,4 @@
 	</body>
 </html>
 
-<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
