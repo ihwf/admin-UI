@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
-		<title>用户管理</title>
+		<title>个人中心</title>
 	</head>
 	<body>
 		<div class="content">
@@ -30,45 +30,28 @@
 				</ul>
 			</nav>
 			
-			<article id="article">
-				<div class="users-table">
-					<div class="username">
-						用户名
-					</div>
-					
-					<div class="password">
-						密码
-					</div>
-					
-					<div class="operation">
-						操作
-					</div>
-					
-					<div class="user">
-						name
-					</div>
-					
-					<div class="psw">
-						password
-					</div>
-					
-					<div class="operate">
-						<a href="modify.html?id=1" class="btn btn-green">重置密码</a>
-						<a href="" class="btn btn-red">停用</a>
-					</div>
-					
-					<div class="user">
-						name
-					</div>
-					
-					<div class="psw">
-						password
-					</div>
-					
-					<div class="operate">
-						<a href="modify.html?id=2" class="btn btn-green">重置密码</a>
-						<a href="" class="btn btn-red">停用</a>
-					</div>
+			<article id="article" class="">
+				<div class="add-users">
+					<form method="post" id="form">
+						<div class="label">
+							<p>个人中心</p>
+						</div>
+						
+						<div class="label">
+							<label for="account">账号</label>
+							<input type="text" name="account" id="account" placeholder="请输入账号"/>
+							<span id="tip1">请输入6位以上的账号</span>
+						</div>
+						<div class="label">
+							<label for="password">密码</label>
+							<input type="password" name="password" id="password" placeholder="请输入密码"/>
+							<span id="tip2">请输入6位以上的密码</span>
+						</div>
+						<div class="label">
+							<input type="submit" id="login" value="提交" class="btn btn-green"/>
+							<input type="reset" value="重置" class="btn btn-red"/>
+						</div>
+					</form>
 				</div>
 			</article>
 			
@@ -86,3 +69,4 @@
 </html>
 
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/modify.js" type="text/javascript" charset="utf-8"></script>

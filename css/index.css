@@ -33,10 +33,11 @@ html,body{
 	flex-flow: row wrap;
 	/*align-items: flex-start;*/
 	height: 100%;
-	background-color: #c8c8c8;
+	/*background-color: #c8c8c8;*/
 }
 header{
-	background-color: #3385FF;
+	/*background-color: #3385FF;*/
+	background: url("../img/login-bg.jpg") center center no-repeat fixed !important;
 	height: 40px;
 	display: flex;
 	align-items: center;
@@ -58,13 +59,13 @@ header{
 }
 nav{
 	flex: 1;
-	background-color: #3385FF;
+	/*background-color: #3385FF;*/
 	align-self: stretch;
 }
 nav > ul{
 	height: 100%;
     width: 16.7%;
-	background-color: #3385FF;
+	/*background-color: #3385FF;*/
 	align-self: stretch;
 	padding-top: 8%;
 	position: fixed;
@@ -79,7 +80,7 @@ nav ul li a{
 	padding: 0 5px;
 }
 nav ul li a:hover{
-	background-color: blue;
+	background-color: rgba(255,255,255,.5);
 }
 nav ul li:not(:first-child){
 	width: 100%;

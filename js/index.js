@@ -12,6 +12,7 @@ window.onload = function(){
 		
 	});
 	document.getElementById('userManage').click();
+	
 	//定义ajax获取aticle内容函数
 	function goUrl($ele) {
 		var uri = $ele.getAttribute("title");
@@ -30,6 +31,13 @@ window.onload = function(){
 				document.getElementById('header').className = "close-nav-header";
 				document.getElementById('article').className = "close-nav-article";
 				document.getElementById("article").style.boxShadow = "none";
+				//在导航栏中给当前标签页添加背景色
+				var li = document.getElementsByTagName("li");
+				for (var i = 0;i<li.length;i++) {
+					li[i].style.backgroundColor = "transparent";
+					
+				}
+				$ele.parentNode.style.backgroundColor = "rgba(255,255,255,.5)";
 			}
 		}
 		ajax.open("GET",uri);
@@ -44,6 +52,9 @@ window.onload = function(){
 		goUrl(this);
 	}
 	document.getElementById('per').onclick = function () {
+		goUrl(this);
+	}
+	document.getElementById('person').onclick = function () {
 		goUrl(this);
 	}
 	document.getElementById('sys').onclick = function () {
@@ -64,5 +75,6 @@ window.onload = function(){
 		}
 		
 	});
+
 	
 }
