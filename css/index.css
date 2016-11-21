@@ -112,9 +112,10 @@ article{
 article .users-table{
 	align-self: baseline;
 	width: 80%;
-	margin: 10% auto;
+	margin: 0px auto;
 	display: flex;
 	flex-flow: row wrap; 
+	padding-bottom: 5%;
 }
 .users-table .username,.users-table .password,.users-table .operation{
 	flex: 2 33%;
@@ -127,13 +128,8 @@ article .users-table{
 	padding: 10px 0;
 	border-top: 1px #EEEEEE solid;
 }
-.add-users{
-	align-self: baseline;
-	width: 80%;
-	margin-top: 10%;
-	background-color: rgb(251,255,202);
-	display: flex;
-	justify-content: center;
+.users-table form{
+	margin: 0px auto;
 }
 
 
@@ -249,14 +245,28 @@ p{
 	padding: 10px 0;
 	text-align: center;
 }
+.permission{
+    align-items: center;
+    border-top: 1px solid #eeeeee;
+    display: flex;
+    flex: 2 1 33%;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 10px 0;
+    text-align: center;
+}
 .per{
 	flex: 2 33%;
 	padding: 10px 0;
 	text-align: center;
 	border-top: 1px #EEEEEE solid;
 }
-.per label{
+.permission label{
 	margin-bottom: 5px;
+    align-items: center;
+    display: flex;
+    flex: 1 1 26%;
+    justify-content: center;
 }
 .label .btn{
 	min-height: 30px;
@@ -380,6 +390,9 @@ footer{
 	}
 	.operate a:not(:first-child),.art a:not(:first-child),.per a:not(:first-child){
 		margin-top: 5px;
+	}
+	.permission label{
+	    flex: 1 1 100%;
 	}
 	.btn{
 		max-height: 20px;

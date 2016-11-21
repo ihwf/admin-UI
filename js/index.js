@@ -47,6 +47,9 @@ window.onload = function(){
 	document.getElementById('user').onclick = function () {
 		goUrl(this);
 	}
+	document.getElementById('admin').onclick = function () {
+		goUrl(this);
+	}
 	document.getElementById('art').onclick = function () {
 		goUrl(this);
 	}
