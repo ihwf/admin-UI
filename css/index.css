@@ -99,7 +99,7 @@ nav > ul > li > ul{
 article{
 	flex: 5;
 	margin: 40px 10px 0px auto;
-	background-color: #FBFFCA;
+	background-color: rgba(255,255,255,.5);
 	word-break: break-all;
 	border-radius: 6px 6px 0 0;
 	padding: 5% 0px;
@@ -131,7 +131,10 @@ article .users-table{
 .users-table form{
 	margin: 0px auto;
 }
-
+.users-table .row-form{
+    display: flex;
+    flex: 1 1 100%;
+}
 
 @keyframes error{
 	0%,100%{transform: translateX(0px);}
@@ -255,18 +258,34 @@ p{
     padding: 10px 0;
     text-align: center;
 }
+.add-label{
+	flex: 1 100%;
+	display: flex;
+}
+.add-label label{
+    flex: 1;
+    display: flex;
+    padding-left: 11.5%;
+}
+.add-permission{
+	flex: 1 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: row wrap;
+}
+.add-permission label{
+    align-items: center;
+    display: flex;
+    flex: 1 1 20%;
+    margin-bottom: 10px;
+    padding-left: 6%;
+}
 .per{
 	flex: 2 33%;
 	padding: 10px 0;
 	text-align: center;
 	border-top: 1px #EEEEEE solid;
-}
-.permission label{
-	margin-bottom: 5px;
-    align-items: center;
-    display: flex;
-    flex: 1 1 26%;
-    justify-content: center;
 }
 .label .btn{
 	min-height: 30px;
@@ -324,7 +343,7 @@ footer{
 	}
 }
 
-@media only screen and (min-width: 100px) and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
 	header{
 		display: block;
 	}
@@ -393,6 +412,26 @@ footer{
 	}
 	.permission label{
 	    flex: 1 1 100%;
+	}
+	.per{
+		align-items: center;
+	}
+	.per .btn{
+		max-height: 30px;
+	}
+	
+	.add-label label{
+	    flex: 1;
+	    display: flex;
+	    padding-left: 6%;
+	    align-items: center;
+	}
+	.add-permission{
+		flex-flow: column wrap;
+	}
+	.add-permission label{
+	    flex: 1 33%;
+	    margin: 10px;
 	}
 	.btn{
 		max-height: 20px;

@@ -75,8 +75,15 @@ window.onload = function(){
 			document.getElementById('article').className = "close-nav-article";
 			document.getElementById("article").style.boxShadow = "none";
 		}
-		
 	});
-
+	//点击内容部分隐藏导航栏
+	document.getElementById("article").addEventListener("click",function() {
+		if(document.getElementById('nav').className == "open-nav"){
+			document.getElementById('nav').className = "close-nav";
+			document.getElementById('header').className = "close-nav-header";
+			document.getElementById('article').className = "close-nav-article";
+			document.getElementById("article").style.boxShadow = "none";
+		}
+	});
 	
 }
