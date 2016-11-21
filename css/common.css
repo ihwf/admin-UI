@@ -23,7 +23,8 @@ fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
 button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
 table { border-collapse: collapse; border-spacing: 0; }
 html,body{
-	background: url("../img/login-bg.jpg") center center no-repeat fixed !important;
+	background: url("../img/main-bg.png") center center no-repeat fixed !important;
+	background-size: cover !important;
 }
 .btn{
 	width: 20%;

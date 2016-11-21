@@ -23,6 +23,10 @@ html,body{
 	height: 100%;
 	background-color: #FBFFCA;
 }
+header,footer{
+	background: url("../img/main-bg.png") center center no-repeat fixed !important;
+	background-size: cover !important;
+}
 .content{
 	display: -webkit-box;
 	display: -moz-box;
@@ -37,7 +41,6 @@ html,body{
 }
 header{
 	/*background-color: #3385FF;*/
-	background: url("../img/login-bg.jpg") center center no-repeat fixed !important;
 	height: 40px;
 	display: flex;
 	align-items: center;
@@ -67,7 +70,7 @@ nav > ul{
     width: 16.7%;
 	/*background-color: #3385FF;*/
 	align-self: stretch;
-	padding-top: 8%;
+	padding-top: 40px;
 	position: fixed;
 }
 nav ul li a{
@@ -80,11 +83,11 @@ nav ul li a{
 	padding: 0 5px;
 }
 nav ul li a:hover{
-	background-color: rgba(255,255,255,.5);
+	background-color: rgba(255,255,255,.3);
 }
 nav ul li:not(:first-child){
 	width: 100%;
-	border-top: 1px #C8C8C8 solid;
+	/*border-top: 1px #C8C8C8 solid;*/
 }
 nav > ul > li > ul{
 	text-indent: 1em;
@@ -95,21 +98,21 @@ nav > ul > li > ul{
 }
 article{
 	flex: 5;
+	margin: 40px 10px 0px auto;
 	background-color: #FBFFCA;
 	word-break: break-all;
+	border-radius: 6px 6px 0 0;
 	padding: 5% 0px;
-	box-shadow: 2px 0px 6px rgba(0,0,0,.5) inset;
 	display: flex;
 	justify-content: center;
 	align-items: baseline;
 	position: relative;
-	overflow: scroll;
+	overflow-y: auto;
 }
 article .users-table{
 	align-self: baseline;
 	width: 80%;
 	margin: 10% auto;
-	background-color: rgb(251,255,202);
 	display: flex;
 	flex-flow: row wrap; 
 }
@@ -119,7 +122,7 @@ article .users-table{
 	text-align: center;
 }
 .users-table .user,.users-table .psw,.users-table .operate{
-	flex: 2 33%;
+	flex: 2 50%;
 	text-align: center;
 	padding: 10px 0;
 	border-top: 1px #EEEEEE solid;
@@ -263,12 +266,11 @@ footer{
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	background-color: black;
 	color: white;
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
-	height: 5%;
+	height: 20px;
 }
 
 
@@ -333,7 +335,6 @@ footer{
 		flex: 1 40%;
 	}
 	nav ul{
-		padding-top: 8%;
 		width: 50%;
 	}
 	nav ul li ul{
@@ -351,8 +352,12 @@ footer{
 		animation-fill-mode: forwards;
 		-webkit-animation-fill-mode: forwards;
 	}
+	nav ul li a:hover{
+		background-color: transparent;
+	}
 	article{
 		box-shadow: none;
+		margin: 40px auto 20px;
 	}
 	.open-nav-article{
 		animation: open-nav-article 200ms;

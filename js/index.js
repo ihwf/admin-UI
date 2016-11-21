@@ -13,7 +13,7 @@ window.onload = function(){
 	});
 	document.getElementById('userManage').click();
 	
-	//定义ajax获取aticle内容函数
+	//定义函数 - ajax获取aticle内容
 	function goUrl($ele) {
 		var uri = $ele.getAttribute("title");
 		var ajax = new XMLHttpRequest;
@@ -35,9 +35,8 @@ window.onload = function(){
 				var li = document.getElementsByTagName("li");
 				for (var i = 0;i<li.length;i++) {
 					li[i].style.backgroundColor = "transparent";
-					
 				}
-				$ele.parentNode.style.backgroundColor = "rgba(255,255,255,.5)";
+				$ele.parentNode.style.backgroundColor = "rgba(255,255,255,.3)";
 			}
 		}
 		ajax.open("GET",uri);
