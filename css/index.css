@@ -423,11 +423,11 @@ footer{
 	.add-label label{
 	    flex: 1;
 	    display: flex;
-	    padding-left: 6%;
+	    padding-left: 3%;
 	    align-items: center;
 	}
 	.add-permission{
-		flex-flow: column wrap;
+		flex-flow: column;
 	}
 	.add-permission label{
 	    flex: 1 33%;
