@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
 		<title>后台管理</title>
 	</head>
-	<body>
+	<body id="body">
 		<div class="content">
 			<header id="header" class="">
 				<i class="icon-align-justify nav-icon" id="open-nav"></i>
@@ -20,7 +20,9 @@
 						<a href="javascript:;" id="userManage"><span>用户管理</span><i class="icon-group"></i></a>
 						<ul id="users">
 							<li><a href="javascript:;" title="../users/" id="user"><span>普通用户</span><i class="icon-user"></i></a></li>
-							<li><a href="javascript:;" title="../admin/" id="admin"><span>管理员</span><i class="icon-user-md"></i></a></li>
+							<li>
+								<a href="javascript:;" id="admin"><span>管理员</span><i class="icon-user-md admin"></i></a>
+							</li>
 						</ul>
 					</li>
 					<li><a href="javascript:;" title="../article/" id="art"><span>文章管理</span><i class="icon-file-alt icon-large"></i></a></li>
@@ -83,7 +85,7 @@
 			</footer>
 		</div>
 		
+	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
 
-<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>

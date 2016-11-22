@@ -1,4 +1,15 @@
 window.onload = function () {
+	//设置动态背景图
+	var ajax = new XMLHttpRequest;
+	ajax.onreadystatechange = function () {
+		if(ajax.readyState == 4 && ajax.status ==200){
+			var bingImg = ajax.responseText;
+			document.querySelector("body").style.backgroundImage = "url("+bingImg+")";
+		}
+	}
+	ajax.open("GET","https://heweifeng.cn/bing.php");
+	ajax.send();
+	
 	var account = document.getElementById('account');
 	var password = document.getElementById('password');
 	var code = document.getElementById('code');
@@ -14,8 +25,6 @@ window.onload = function () {
 			document.getElementById($tip).style.animation = "tip 300ms";
 			document.getElementById($tip).style.MozAnimation = "tip 300ms";
 			document.getElementById($tip).style.WebkitAnimation = "tip 300ms";
-			
-			
 		}
 	}
 	

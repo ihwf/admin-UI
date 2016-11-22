@@ -21,12 +21,8 @@
 html,body{
 	width: 100%;
 	height: 100%;
-	background-color: #FBFFCA;
 }
-header,footer{
-	background: url("../img/main-bg.png") center center no-repeat fixed !important;
-	background-size: cover !important;
-}
+
 .content{
 	display: -webkit-box;
 	display: -moz-box;
@@ -81,6 +77,7 @@ nav ul li a{
 	line-height: 30px;
 	color: white;
 	padding: 0 5px;
+	text-shadow: 0 0 6px black;
 }
 nav ul li a:hover{
 	background-color: rgba(255,255,255,.3);
@@ -99,7 +96,7 @@ nav > ul > li > ul{
 article{
 	flex: 5;
 	margin: 40px 10px 0px auto;
-	background-color: rgba(255,255,255,.5);
+	background-color: rgba(255,255,255,.6);
 	word-break: break-all;
 	border-radius: 6px 6px 0 0;
 	padding: 5% 0px;
@@ -123,7 +120,7 @@ article .users-table{
 	text-align: center;
 }
 .users-table .user,.users-table .psw,.users-table .operate{
-	flex: 2 50%;
+	flex: 2 33%;
 	text-align: center;
 	padding: 10px 0;
 	border-top: 1px #EEEEEE solid;
@@ -289,6 +286,9 @@ p{
 }
 .label .btn{
 	min-height: 30px;
+}
+.admin{
+	position: relative;
 }
 footer{
 	display: flex;
@@ -472,18 +472,18 @@ footer{
 }
 @keyframes open-nav-header{
 	0%{
-		width: 100%;
+		transform: translateX(0);
 	}
 	100%{
-		width: 50%;
+		transform: translateX(50%);
 	}
 }
 @-webkit-keyframes open-nav-header{
 	0%{
-		width: 100%;
+		transform: translateX(0);
 	}
 	100%{
-		width: 50%;
+		transform: translateX(50%);
 	}
 }
 @keyframes close-nav-header{

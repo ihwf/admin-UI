@@ -1,4 +1,15 @@
 window.onload = function(){
+	//设置动态背景图
+	var ajax = new XMLHttpRequest;
+	ajax.onreadystatechange = function () {
+		if(ajax.readyState == 4 && ajax.status ==200){
+			var bingImg = ajax.responseText;
+			document.querySelector("body").style.backgroundImage = "url("+bingImg+")";
+		}
+	}
+	ajax.open("GET","https://heweifeng.cn/bing.php");
+	ajax.send();
+	
 	//展开用户管理菜单
 	document.getElementById('userManage').addEventListener("click",function(){
 		if(document.getElementById('users').style.display == "none"){
@@ -36,7 +47,7 @@ window.onload = function(){
 				for (var i = 0;i<li.length;i++) {
 					li[i].style.backgroundColor = "transparent";
 				}
-				$ele.parentNode.style.backgroundColor = "rgba(255,255,255,.3)";
+				$ele.parentNode.style.backgroundColor = "rgba(255,255,255,.5)";
 			}
 		}
 		ajax.open("GET",uri);
