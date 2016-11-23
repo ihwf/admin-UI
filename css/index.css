@@ -87,9 +87,9 @@ nav ul li:not(:first-child){
 	/*border-top: 1px #C8C8C8 solid;*/
 }
 nav > ul > li > ul{
-	text-indent: 1em;
+	text-indent: 0.5em;
 }
-#users{
+#users,#admin{
 	display: none;
 	padding-top: 0px;
 }
@@ -105,6 +105,7 @@ article{
 	align-items: baseline;
 	position: relative;
 	overflow-y: auto;
+	flex-flow: row wrap;
 }
 article .users-table{
 	align-self: baseline;
@@ -112,7 +113,7 @@ article .users-table{
 	margin: 0px auto;
 	display: flex;
 	flex-flow: row wrap; 
-	padding-bottom: 5%;
+	padding-bottom: 20px;
 }
 .users-table .username,.users-table .password,.users-table .operation{
 	flex: 2 33%;
@@ -132,7 +133,9 @@ article .users-table{
     display: flex;
     flex: 1 1 100%;
 }
-
+#admin{
+	text-indent: 1em;
+}
 @keyframes error{
 	0%,100%{transform: translateX(0px);}
 	10%,30%,50%,70%,90%{transform: translateX(10px);}
@@ -287,8 +290,21 @@ p{
 .label .btn{
 	min-height: 30px;
 }
-.admin{
-	position: relative;
+.page{
+	display: flex;
+	padding-bottom: 6%;
+}
+.page a{
+	color: white;
+	border-radius: 3px;
+	width: 30px;
+	text-align: center;
+	margin: 0 5px;
+	padding: 2px;
+	background-color: cornflowerblue;
+}
+.page a:hover{
+	background-color: dodgerblue;
 }
 footer{
 	display: flex;

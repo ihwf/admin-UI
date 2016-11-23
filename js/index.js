@@ -1,3 +1,4 @@
+
 window.onload = function(){
 	//设置动态背景图
 	var ajax = new XMLHttpRequest;
@@ -5,74 +6,71 @@ window.onload = function(){
 		if(ajax.readyState == 4 && ajax.status ==200){
 			var bingImg = ajax.responseText;
 			document.querySelector("body").style.backgroundImage = "url("+bingImg+")";
+			document.querySelector("header").style.backgroundImage = "url("+bingImg+")";
+			document.querySelector("footer").style.backgroundImage = "url("+bingImg+")";
 		}
 	}
 	ajax.open("GET","https://heweifeng.cn/bing.php");
 	ajax.send();
 	
-	//展开用户管理菜单
-	document.getElementById('userManage').addEventListener("click",function(){
-		if(document.getElementById('users').style.display == "none"){
-			document.getElementById('users').style.display = "block";
-			document.getElementById('users').style.animation = "fadeInDown 200ms";
-			document.getElementById('users').style.webkitAnimation = "fadeInDown 200ms";
-			
-		}else{
-			document.getElementById('users').style.display = "none";
-		}
-		
-	});
-	document.getElementById('userManage').click();
+	//定义函数 - 展开菜单
+	function openList($parent,$child) {
+		document.getElementById($parent).addEventListener("click",function(){
+			if(document.getElementById($child).style.display == "none"){
+				document.getElementById($child).style.display = "block";
+				document.getElementById($child).style.animation = "fadeInDown 200ms";
+				document.getElementById($child).style.webkitAnimation = "fadeInDown 200ms";
+			}else{
+				document.getElementById($child).style.display = "none";
+			}
+		});
+		document.getElementById($parent).click();
+	}
+	openList("userManage","users");
+	openList("adminManage","admin");
 	
-	//定义函数 - ajax获取aticle内容
+	
+	//定义函数 - 点击导航栏a标签调用ajax获取aticle内容
 	function goUrl($ele) {
-		var uri = $ele.getAttribute("title");
-		var ajax = new XMLHttpRequest;
-		ajax.onreadystatechange = function () {
-			if(ajax.readyState == 4 && ajax.status == 200){
-				//获取主要内容加载进article里
-				document.getElementById("temp").innerHTML = ajax.responseText;
-				var title = document.getElementsByTagName("title")[1].innerHTML;
-				var content = document.getElementsByTagName("article")[1].innerHTML;
-				document.title = title;//修改浏览器标题
-     			window.history.pushState({},"",uri);//修改地址栏url
-     			document.getElementsByTagName("article")[0].innerHTML = content;
-     			//关闭导航条
-     			document.getElementById('nav').className = "close-nav";
-				document.getElementById('header').className = "close-nav-header";
-				document.getElementById('article').className = "close-nav-article";
-				document.getElementById("article").style.boxShadow = "none";
-				//在导航栏中给当前标签页添加背景色
-				var li = document.getElementsByTagName("li");
-				for (var i = 0;i<li.length;i++) {
-					li[i].style.backgroundColor = "transparent";
+		document.getElementById($ele).onclick = function () {
+			var uri = this.title;
+			var ajax = new XMLHttpRequest;
+			var obj = this;
+			ajax.onreadystatechange = function() {
+				if(ajax.readyState == 4 && ajax.status == 200){
+					//获取主要内容加载进article里
+					document.getElementById("temp").innerHTML = ajax.responseText;
+					var title = document.getElementsByTagName("title")[1].innerHTML;
+					var content = document.getElementsByTagName("article")[1].innerHTML;
+					document.title = title;//修改浏览器标题
+	     			window.history.pushState({},"",uri);//修改地址栏url
+	     			document.getElementsByTagName("article")[0].innerHTML = content;
+	     			//关闭导航条
+	     			document.getElementById('nav').className = "close-nav";
+					document.getElementById('header').className = "close-nav-header";
+					document.getElementById('article').className = "close-nav-article";
+					document.getElementById("article").style.boxShadow = "none";
+					//在导航栏中给当前标签页添加背景色
+					var li = document.getElementsByTagName("li");
+					for (var i = 0;i<li.length;i++) {
+						li[i].style.backgroundColor = "transparent";
+					}
+					obj.parentNode.style.backgroundColor = "rgba(255,255,255,.5)";
 				}
-				$ele.parentNode.style.backgroundColor = "rgba(255,255,255,.5)";
+			}
+			ajax.open("GET",uri);
+			ajax.send();
+		}
+	}
+	//读取导航栏的a链接,添加点击事件
+	var navList = document.querySelector("nav");
+	var aList = navList.getElementsByTagName("a");
+		for (var i = 0;i < aList.length;i++) {
+			if(aList[i].title){
+				goUrl(aList[i].id);
 			}
 		}
-		ajax.open("GET",uri);
-		ajax.send();
-	}
 	
-	
-	document.getElementById('user').onclick = function () {
-		goUrl(this);
-	}
-	document.getElementById('admin').onclick = function () {
-		goUrl(this);
-	}
-	document.getElementById('art').onclick = function () {
-		goUrl(this);
-	}
-	document.getElementById('per').onclick = function () {
-		goUrl(this);
-	}
-	document.getElementById('person').onclick = function () {
-		goUrl(this);
-	}
-	document.getElementById('sys').onclick = function () {
-		goUrl(this);
-	}
 	//移动端展开和关闭导航条
 	document.getElementById('open-nav').addEventListener("click",function(){
 		if(document.getElementById('nav').className == "close-nav" || document.getElementById('nav').className == ""){
