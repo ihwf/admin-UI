@@ -1,5 +1,6 @@
 
 	var account = document.getElementById('account');
+	var old = document.getElementById('old');
 	var password = document.getElementById('password');
 	var login = document.getElementById('login');
 	var valid = /^\w{6,}$/;
@@ -19,8 +20,12 @@
 		check(this,"tip1",valid);
 	}
 	
-	password.oninput = function () {
+	old.oninput = function () {
 		check(this,"tip2",valid);
+	}
+	
+	password.oninput = function () {
+		check(this,"tip3",valid);
 	}
 	//定义函数 - 提交表单时检查输入框是否符合指定规则
 	function checkSubmit ($ele,$tip,$valid) {
@@ -34,14 +39,16 @@
 			return false;
 		}
 	}
+	
+	
 	//当表单提交是检验规则
 	document.getElementById('form').onsubmit = function(){
-		if(checkSubmit(account,"tip1",valid) && checkSubmit(password,"tip2",valid)){
+		if(checkSubmit(account,"tip1",valid) && checkSubmit(old,"tip2",valid) && checkSubmit(password,"tip3",valid)){
 			this.submit();
 		}else{
-			
 			checkSubmit(account,"tip1",valid);
-			checkSubmit(password,"tip2",valid);
+			checkSubmit(old,"tip2",valid);
+			checkSubmit(password,"tip3",valid);
 			return false;
 		}
 	}

@@ -36,7 +36,7 @@ html,body{
 	/*background-color: #c8c8c8;*/
 }
 header{
-	/*background-color: #3385FF;*/
+	/*background-color: transparent;*/
 	height: 40px;
 	display: flex;
 	align-items: center;
@@ -185,7 +185,7 @@ p{
 	box-shadow: 0 0 3px cornflowerblue;
 }
 
-#tip1::before,#tip2::before,#tip3::before{
+#tip1::before,#tip2::before,#tip3::before,#tip4::before{
 	content: "";
 	width: 0px;
 	height: 0px;
@@ -197,7 +197,7 @@ p{
 	top: 15%;
 	left: -18px;
 }
-#tip1,#tip2,#tip3{
+#tip1,#tip2,#tip3,#tip4{
 	width: 135px;
 	background-color: red;
 	position: absolute;
@@ -284,6 +284,8 @@ p{
 .per{
 	flex: 2 33%;
 	padding: 10px 0;
+	border: none;
+	background-color: transparent;
 	text-align: center;
 	border-top: 1px #EEEEEE solid;
 }
@@ -437,6 +439,10 @@ footer{
 	}
 	.per .btn{
 		max-height: 30px;
+	}
+	.per a{
+		height: 20px !important;
+		max-width: 50%;
 	}
 	
 	.add-label label{
