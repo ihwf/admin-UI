@@ -43,7 +43,7 @@ window.onload = function(){
 					var title = document.getElementsByTagName("title")[1].innerHTML;
 					var content = document.getElementsByTagName("article")[1].innerHTML;
 					document.title = title;//修改浏览器标题
-	     			window.history.pushState({},"",uri);//修改地址栏url
+	     			window.history.pushState({title:title,url:uri},"",uri);//修改地址栏url,将浏览记录添加进历史
 	     			document.getElementsByTagName("article")[0].innerHTML = content;
 	     			//关闭导航条
 	     			document.getElementById('nav').className = "close-nav";
@@ -62,6 +62,16 @@ window.onload = function(){
 			ajax.send();
 		}
 	}
+	
+	//监听浏览器前进后退,响应浏览器
+	window.addEventListener('popstate', function(e){
+	  if (history.state){
+		var state = e.state;
+		window.location = state.url;
+	    //do something(state.url, state.title);
+	  }
+	}, false);
+	
 	//读取导航栏的a链接,添加点击事件
 	var navList = document.querySelector("nav");
 	var aList = navList.getElementsByTagName("a");
