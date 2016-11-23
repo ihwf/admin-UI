@@ -293,6 +293,9 @@ p{
 .page{
 	display: flex;
 	padding-bottom: 6%;
+	flex: 0 100%;
+	justify-content: center;
+	align-content: center;
 }
 .page a{
 	color: white;
