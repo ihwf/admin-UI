@@ -44,31 +44,37 @@
 			
 			<article id="article" class="">
 				<div class="users-table">
-					<form method="post" id="form">
+					<form method="post" id="form" class="add-admin">
 						<div class="label">
 							<p>失败</p>
 						</div>
 						
-						<div class="label">
+					
+						<div class="left">
 							<label for="account">账号</label>
-							<input type="text" name="account" id="account" placeholder="请输入账号"/>
-							<span id="tip1">请输入6位以上的账号</span>
-						</div>
-						<div class="label">
 							<label for="password">密码</label>
-							<input type="password" name="password" id="password" placeholder="请输入密码"/>
-							<span id="tip2">请输入6位以上的密码</span>
-						</div>
-						<div class="add-label">
 							<label>角色</label>
-							<div class="add-permission">
-								<label><input type="checkbox" name="n" id="" value="id1" /> 超级管理员</label>
-								<label><input type="checkbox" name="nsa" id="" value="id2" /> 普通管理员</label>
-								<label><input type="checkbox" name="nd" id="" value="id3" /> 超级管理员</label>
-								<label><input type="checkbox" name="nf" id="" value="id4" /> 普通管理员</label>
-								<label><input type="checkbox" name="n" id="" value="id5" /> 超级管理员</label>
-								<label><input type="checkbox" name="n" id="" value="id6" /> 普通管理员</label>
+						</div>
+						
+						<div class="right">
+							<input type="text" name="account" id="account" placeholder="请输入账号"/>
+							<span id="tip5">请输入6位以上的账号</span>
+							<input type="password" name="password" id="password" placeholder="请输入密码"/>
+							<span id="tip6">请输入6位以上的密码</span>
+							<div class="list">
+								<label><input type="checkbox" name="n" id="" value="id1" /><span>超级管理员</span></label>
+								<label><input type="checkbox" name="nsa" id="" value="id2" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="nd" id="" value="id3" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="nf" id="" value="id4" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="n" id="" value="id5" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="n" id="" value="id6" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="n" id="" value="id6" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="n" id="" value="id6" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="n" id="" value="id6" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="n" id="" value="id6" /><span>普通管理员</span></label>
+								<label><input type="checkbox" name="n" id="" value="id6" /><span>普通管理员</span></label>
 							</div>
+							
 						</div>
 						
 						<div class="label">
@@ -90,7 +96,7 @@
 		</div>
 			
 	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/modify.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/add_user.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
 

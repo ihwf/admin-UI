@@ -181,6 +181,98 @@ p{
 	padding: 0px 5px;
 	margin-left: 18%;
 }
+.add-admin{
+    display: flex;
+    flex-flow: row wrap;
+    width: 50%;
+}
+.add-admin > .label{
+    margin-bottom: 10px;
+}
+.add-admin > .left,.add-admin > .right{
+	display: flex;
+	flex: 1 50%;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+.add-admin > .left{
+	justify-content: flex-end;
+    align-items: center;
+    align-content: flex-start;
+}
+.add-admin > .right{
+	justify-content: flex-start;
+}
+.add-admin > .left > label{
+	display: flex;
+	flex: 1 100%;
+	justify-content: center;
+	height: 30px;
+	line-height: 35px;
+	margin-bottom: 10px;
+}
+.add-admin > .right > input,.add-admin > .right > .list{
+	display: flex;
+	flex: 1 100%;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+	flex-flow: row wrap;
+}
+.add-admin > .right > input{
+	height: 30px;
+	line-height: 30px;
+	border: none;
+	border-radius: 6px;
+	margin-bottom: 15px;
+}
+.add-admin > .right > .list > label{
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.right{
+	position: relative;
+}
+#tip5::before,#tip6::before{
+	content: "";
+	width: 0px;
+	height: 0px;
+	border: 10px solid;
+	border-color: transparent;
+	border-right-color: red;
+	line-height: 30px;
+	position: absolute;
+	top: 15%;
+	left: -18px;
+}
+#tip5{
+	width: 135px;
+	background-color: red;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	right: -160px;
+	border-radius: 6px;
+	padding: 0 5px;
+	color: white;
+	box-shadow: 1px 1px 6px black;
+	display: none;
+}
+#tip6{
+	width: 135px;
+	background-color: red;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	right: -160px;
+	border-radius: 6px;
+	padding: 0 5px;
+	color: white;
+	box-shadow: 1px 1px 6px black;
+	top: 45px;
+	display: none;
+}
 .label input:focus{
 	box-shadow: 0 0 3px cornflowerblue;
 }
@@ -331,8 +423,20 @@ footer{
 
 
 @media only screen and (max-width: 540px) {
-	.login form{
+	.login form,.add-admin{
 		width: 80%;
+	}
+	.add-admin > .left{
+		display: flex;
+		flex: 1 30%;
+		justify-content: center;
+		flex-flow: row wrap;
+	}
+	.add-admin > .right{
+		display: flex;
+		flex: 1 70%;
+		justify-content: center;
+		flex-flow: row wrap;
 	}
 	.btn{
 		width: 60% !important;
@@ -351,6 +455,33 @@ footer{
 		line-height: 20px;
 		top: -18px;
 		left: 25%;
+	}	
+	#tip5::before,#tip6::before{
+		border: 6px solid;
+		border-color: transparent;
+		border-right-color: none;
+		border-top-color: red;
+		top: 20px;
+		left: 45%;
+	}
+	#tip5{
+		background-color: red;
+		height: 20px;
+		line-height: 20px;
+		top: -18px;
+		left: 0px;
+	}
+	#tip6{
+		background-color: red;
+		height: 20px;
+		line-height: 20px;
+		top: 25px;
+		left: 0px;
+	}
+	.add-admin > .right > input,.add-admin > .right > .list{
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: center;
 	}
 }
 @media only screen and (min-width: 541px) and (max-width: 640px) {
