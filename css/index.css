@@ -230,6 +230,7 @@ p{
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
+	flex: 1 33%;
 }
 .right{
 	position: relative;
@@ -480,8 +481,11 @@ footer{
 	}
 	.add-admin > .right > input,.add-admin > .right > .list{
 		flex-flow: column wrap;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
+	}
+	.add-admin > .right > .list > label{
+		flex: initial;
 	}
 }
 @media only screen and (min-width: 541px) and (max-width: 640px) {
