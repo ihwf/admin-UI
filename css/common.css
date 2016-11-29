@@ -23,10 +23,11 @@ fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
 button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
 table { border-collapse: collapse; border-spacing: 0; }
 * {
+	outline: none;
 	-webkit-tap-highlight-color: transparent;/*清除webkit内核浏览器点击控件的边框*/
 }
 body,header,footer{
-	background: url("../img/main-bg.png") center center no-repeat fixed;
+	background: url(../img/main-bg.png) center center no-repeat fixed;
 	background-size: cover !important;
 }
 .btn{
@@ -42,13 +43,13 @@ body,header,footer{
 }
 
 .btn-green{
-	background-color: greenyellow;
+	background-color: blue;
 }
 .btn-green:hover{
-	background-color: green;
+	background-color: darkblue;
 }
 .btn-green:active{
-	background-color: darkgreen;
+	background-color: darkblue;
 }
 .btn-red{
 	background-color: red;

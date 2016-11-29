@@ -1,17 +1,17 @@
 
 window.onload = function(){
 	//设置动态背景图
-	var ajax = new XMLHttpRequest;
-	ajax.onreadystatechange = function () {
-		if(ajax.readyState == 4 && ajax.status ==200){
-			var bingImg = ajax.responseText;
-			document.querySelector("body").style.backgroundImage = "url("+bingImg+")";
-			document.querySelector("header").style.backgroundImage = "url("+bingImg+")";
-			document.querySelector("footer").style.backgroundImage = "url("+bingImg+")";
-		}
-	}
-	ajax.open("GET","https://heweifeng.cn/bing.php");
-	ajax.send();
+//	var ajax = new XMLHttpRequest;
+//	ajax.onreadystatechange = function () {
+//		if(ajax.readyState == 4 && ajax.status ==200){
+//			var bingImg = ajax.responseText;
+//			document.querySelector("body").style.backgroundImage = "url("+bingImg+")";
+//			document.querySelector("header").style.backgroundImage = "url("+bingImg+")";
+//			document.querySelector("footer").style.backgroundImage = "url("+bingImg+")";
+//		}
+//	}
+//	ajax.open("GET","https://heweifeng.cn/bing.php");
+//	ajax.send();
 	
 	//定义函数 - 展开菜单
 	function openList($parent,$child) {
