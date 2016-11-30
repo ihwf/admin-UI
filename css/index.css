@@ -63,7 +63,7 @@ nav{
 }
 nav > ul{
 	height: 90%;
-    width: 16.7%;
+    width: 15.7%;
 	/*background-color: #3385FF;*/
 	align-self: stretch;
 	padding-top: 70px;
@@ -71,16 +71,15 @@ nav > ul{
 }
 nav ul li a{
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	height: 40px;
 	line-height: 40px;
 	color: white;
-	padding: 0 10px;
-	text-shadow: 0 0 6px black;
+	padding-left: 30px;
 }
 nav ul li span{
-	margin-right: 5px;
+	margin-left: 10px;
 }
 nav ul li a:hover{
 	background-color: rgba(255,255,255,.3);
@@ -93,8 +92,14 @@ nav ul li:not(:first-child){
 	display: none;
 	padding-top: 0px;
 }
+#users a {
+    padding-left: 40px;
+}
+#admin li a{
+	padding-left: 3.5em;
+}
 article{
-	flex: 5;
+	flex: 5.4;
 	margin: 40px 10px 0px auto;
 	background-color: rgba(255,255,255,1);
 	word-break: break-all;
@@ -109,7 +114,7 @@ article{
 }
 article .users-table{
 	align-self: baseline;
-	width: 80%;
+	width: 100%;
 	margin: 0px auto;
 	display: flex;
 	flex-flow: row wrap; 
@@ -118,13 +123,18 @@ article .users-table{
 .users-table .username,.users-table .password,.users-table .operation{
 	flex: 2 33%;
 	padding: 10px 0;
-	text-align: center;
+	text-align: left;
+	text-indent: 4em;
 }
 .users-table .user,.users-table .psw,.users-table .operate{
 	flex: 2 33%;
-	text-align: center;
+	text-align: left;
+	text-indent: 4em;
 	padding: 10px 0;
 	border-top: 1px #EEEEEE solid;
+}
+.operate .btn{
+	margin-left: 0px !important;
 }
 .users-table form{
 	margin: 0px auto;
@@ -132,9 +142,6 @@ article .users-table{
 .users-table .row-form{
     display: flex;
     flex: 1 1 100%;
-}
-#admin li a{
-	padding-left: 3em;
 }
 @keyframes error{
 	0%,100%{transform: translateX(0px);}
@@ -400,6 +407,7 @@ p{
 	flex: 0 100%;
 	justify-content: center;
 	align-content: center;
+	padding-right: 15%;
 }
 .page a{
 	color: white;
@@ -427,12 +435,14 @@ footer{
 .loginOut{
 	position: fixed;
 	line-height: 40px;
+	top: 0px;
 	right: 20px;
 	color: white;
 	text-shadow: 0 0 6px black;
 }
 .welcome{
 	position: fixed;
+	top: 0px;
 	line-height: 40px;
 	right: 80px;
 	color: white;
@@ -574,6 +584,14 @@ footer{
 		box-shadow: none;
 		margin: 40px auto 20px;
 	}
+	.users-table .username,.users-table .password,.users-table .operation{
+		text-align: center;
+		text-indent: 0em;
+	}
+	.users-table .user,.users-table .psw,.users-table .operate{
+		text-align: center;
+		text-indent: 0em;
+	}
 	.open-nav-article{
 		animation: open-nav-article 200ms;
 		-webkit-animation: open-nav-article 200ms;
@@ -608,6 +626,9 @@ footer{
 	.per a{
 		height: 20px !important;
 		max-width: 50%;
+	}
+	.page{
+		padding-right: 0;
 	}
 	
 	.add-label label{

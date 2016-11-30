@@ -15,7 +15,8 @@ window.onload = function(){
 	
 	//定义函数 - 展开菜单
 	function openList($parent,$child) {
-		document.getElementById($parent).addEventListener("click",function(){
+		if($parent && $child){
+			document.getElementById($parent).addEventListener("click",function(){
 			if(document.getElementById($child).style.display == "none"){
 				document.getElementById($child).style.display = "block";
 				document.getElementById($child).style.animation = "fadeInDown 200ms";
@@ -25,6 +26,7 @@ window.onload = function(){
 			}
 		});
 		document.getElementById($parent).click();
+		}
 	}
 	openList("userManage","users");
 	openList("adminManage","admin");
