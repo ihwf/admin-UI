@@ -51,6 +51,7 @@ header{
 	height: 40px;
 	line-height: 40px;
 	left: 20px;
+	top: 0px;
 	color: white;
 	font-size: large;
 	cursor: pointer;
@@ -466,6 +467,29 @@ footer{
 .backup~input{
 	min-width: 80px;
 }
+.fieldset{
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+}
+fieldset{
+	border: 1px #C8C8C8 solid;
+	border-radius: 6px;
+	flex: 1 32%;
+	max-width: 32%;
+	display: flex;
+	margin: 5px;
+}
+legend{
+	color: #C8C8C8;
+	margin: 0 5px;
+}
+fieldset form{
+	width: 100%;
+}
+.backup-btn {
+    padding: 6px 5%;
+}
 @media only screen and (max-width: 540px) {
 	.login form,.add-admin{
 		width: 80%;
@@ -533,25 +557,33 @@ footer{
 	.loginOut{
 		display: none;
 	}
+	.backup-btn{
+		display: inline-block;
+		line-height: 30px !important;
+	    margin-left: 7% !important;
+	    padding: 0;
+	    margin-bottom: 10px;
+	}
 }
-@media only screen and (min-width: 541px) and (max-width: 640px) {
+/*@media only screen and (min-width: 541px) and (max-width: 640px) {
 	.login form{
 		width: 70%;
 	}
 	.btn{
 		width: 60% !important;
 	}
-}
-@media only screen and (min-width: 641px) and (max-width: 1011px) {
+}*/
+
+/*@media only screen and (min-width: 641px) and (max-width: 1011px) {
 	.login form{
 		width: 60%;
 	}
 	.btn{
 		width: 60% !important;
 	}
-}
+}*/
 
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 0px) and (max-width: 800px) {
 	.nav-icon{
 		display: block;
 	}
@@ -562,14 +594,14 @@ footer{
 		right: 20px;
 	}
 	.open-nav-header{
-		animation: open-nav-header 200ms;
-		-webkit-animation: open-nav-header 200ms;
+		animation: open-nav-header 90ms;
+		-webkit-animation: open-nav-header 90ms;
 		animation-fill-mode: forwards;
 		-webkit-animation-fill-mode: forwards;
 	}
 	.close-nav-header{
-		animation: close-nav-header 200ms;
-		-webkit-animation: close-nav-header 200ms;
+		animation: close-nav-header 90ms;
+		-webkit-animation: close-nav-header 90ms;
 		animation-fill-mode: forwards;
 		-webkit-animation-fill-mode: forwards;
 	}
@@ -584,14 +616,14 @@ footer{
 		width: 100%;
 	}
 	.open-nav{
-		animation: open-nav 200ms;
-		-webkit-animation: open-nav 200ms;
+		animation: open-nav 90ms;
+		-webkit-animation: open-nav 90ms;
 		animation-fill-mode: forwards;
 		-webkit-animation-fill-mode: forwards;
 	}
 	.close-nav{
-		animation: close-nav 200ms;
-		-webkit-animation: close-nav 200ms;
+		animation: close-nav 90ms;
+		-webkit-animation: close-nav 90ms;
 		animation-fill-mode: forwards;
 		-webkit-animation-fill-mode: forwards;
 	}
@@ -611,16 +643,16 @@ footer{
 		text-indent: 0em;
 	}
 	.open-nav-article{
-		animation: open-nav-article 200ms;
+		/*animation: open-nav-article 200ms;
 		-webkit-animation: open-nav-article 200ms;
 		animation-fill-mode: forwards;
-		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;*/
 	}
 	.close-nav-article{
-		animation: close-nav-article 200ms;
+		/*animation: close-nav-article 200ms;
 		-webkit-animation: close-nav-article 200ms;
 		animation-fill-mode: forwards;
-		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-fill-mode: forwards;*/
 	}
 	.operate,.art,.per,.do-backup{
 		flex-direction: column;
@@ -665,11 +697,25 @@ footer{
 	.btn{
 		max-height: 20px;
 	}
-	
-	.backup,.do-backup{
-		text-align: center;
-		text-indent: 0em;
+	.btn-large{
+		min-width: 100%;
 	}
+	fieldset,fieldset .label{
+		max-width: 100%;
+		flex-flow: column wrap;
+	}
+	.backup-btn{
+		display: inline-block;
+		line-height: 30px !important;
+	    margin-left: 7% !important;
+	    padding: 0;
+	    position: relative;
+    		top: 9px;
+	}
+	.fieldset{
+		display: block;
+	}
+
 }
 @keyframes open-nav{
 	0%{

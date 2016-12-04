@@ -31,9 +31,6 @@ window.onload = function(){
 	openList("userManage","users");
 	openList("adminManage","admin");
 	
-	openList("sys","system");
-	openList("backupAndRestore","backupAndRestoreNav");
-	
 	
 	//定义函数 - 点击导航栏a标签调用ajax获取aticle内容
 	function goUrl($ele) {
@@ -43,14 +40,7 @@ window.onload = function(){
 			var obj = this;
 			ajax.onreadystatechange = function() {
 				if(ajax.readyState == 4 && ajax.status == 200){
-					//获取主要内容加载进article里
-					document.getElementById("temp").innerHTML = ajax.responseText;
-					var title = document.getElementsByTagName("title")[1].innerHTML;
-					var content = document.getElementsByTagName("article")[1].innerHTML;
-					document.title = title;//修改浏览器标题
-	     			window.history.pushState({title:title,url:uri},"",uri);//修改地址栏url,将浏览记录添加进历史
-	     			document.getElementsByTagName("article")[0].innerHTML = content;
-	     			//关闭导航条
+					//关闭导航条
 	     			document.getElementById('nav').className = "close-nav";
 					document.getElementById('header').className = "close-nav-header";
 					document.getElementById('article').className = "close-nav-article";
@@ -61,11 +51,19 @@ window.onload = function(){
 						li[i].style.backgroundColor = "transparent";
 					}
 					obj.parentNode.style.backgroundColor = "rgba(255,255,255,.5)";
+					setTimeout(function () {
+						//获取主要内容加载进article里
+						document.getElementById("temp").innerHTML = ajax.responseText;
+						var title = document.getElementsByTagName("title")[1].innerHTML;
+						var content = document.getElementsByTagName("article")[1].innerHTML;
+						document.title = title;//修改浏览器标题
+		     			window.history.pushState({title:title,url:uri},"",uri);//修改地址栏url,将浏览记录添加进历史
+		     			document.getElementsByTagName("article")[0].innerHTML = content;
+		     			
+						sure("restoreForm","submit","确定还原?");
 					
-					sure("restoreForm","submit");
-					sure("backupForm","submit");
 					
-					
+					},100);
 				}
 			}
 			ajax.open("GET",uri);
@@ -115,17 +113,16 @@ window.onload = function(){
 		}
 	});
 //	定义函数 - 弹窗确定
-	function sure ($id,$even) {
+	function sure ($id,$even,$tip) {
 		if(document.getElementById($id)){
 			document.getElementById($id).addEventListener($even, function (e) {
-				var sure = confirm("确定?");
+				var sure = confirm($tip);
 				if(!sure){
 					e.preventDefault();
 				}
 			});
 		}
 	}
-	sure("restoreForm","submit");
-	sure("backupForm","submit");
+	sure("restoreForm","submit","确定还原?");
 	
 }
