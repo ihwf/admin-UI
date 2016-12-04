@@ -88,14 +88,14 @@ nav ul li:not(:first-child){
 	width: 100%;
 	/*border-top: 1px #C8C8C8 solid;*/
 }
-#users,#admin{
+#users,#admin,#system{
 	display: none;
 	padding-top: 0px;
 }
-#users a {
+#users a,#system a{
     padding-left: 40px;
 }
-#admin li a{
+#admin li a,#backupAndRestoreNav li a{
 	padding-left: 3.5em;
 }
 article{
@@ -119,6 +119,8 @@ article .users-table{
 	display: flex;
 	flex-flow: row wrap; 
 	padding-bottom: 20px;
+	animation: fadeInDown 500ms;
+	-webkit-animation: fadeInDown 500ms;
 }
 .users-table .username,.users-table .password,.users-table .operation{
 	flex: 2 33%;
@@ -448,6 +450,22 @@ footer{
 	color: white;
 	text-shadow: 0 0 6px black;
 }
+.backup,.do-backup{
+	flex: 2 33%;
+	padding: 10px 0;
+	text-align: left;
+	color: black;
+}
+.label select{
+	border: 1px #C8C8C8 solid;
+	border-radius: 6px;
+	height: 30px;
+	line-height: 30px;
+	margin: 10px auto;
+}
+.backup~input{
+	min-width: 80px;
+}
 @media only screen and (max-width: 540px) {
 	.login form,.add-admin{
 		width: 80%;
@@ -604,7 +622,7 @@ footer{
 		animation-fill-mode: forwards;
 		-webkit-animation-fill-mode: forwards;
 	}
-	.operate,.art,.per{
+	.operate,.art,.per,.do-backup{
 		flex-direction: column;
 		display: flex;
 	}
@@ -646,6 +664,11 @@ footer{
 	}
 	.btn{
 		max-height: 20px;
+	}
+	
+	.backup,.do-backup{
+		text-align: center;
+		text-indent: 0em;
 	}
 }
 @keyframes open-nav{
@@ -713,19 +736,3 @@ footer{
 		width: 100%;
 	}
 }
-
-/*
-.wrapper{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-flow:row wrap;font-weight:bold;text-align:center}
-.wrapper > *{padding:10px;flex:1 100%}
-.header{background:tomato}
-.footer{background:lightgreen}
-.main{text-align:left;background:deepskyblue}
-.aside-1{background:gold}
-.aside-2{background:hotpink}
-@media all and (min-width:600px){.aside{flex:1 auto}
-}@media all and (min-width:800px){.main{flex:2 0px}
-.aside-1{order:1}
-.main{order:2}
-.aside-2{order:3}
-.footer{order:4}
-}*/

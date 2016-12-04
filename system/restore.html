@@ -8,10 +8,11 @@
 		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
-		<title>个人中心</title>
+		<title>还原数据库</title>
 	</head>
-	<body>
+	<body id="body">
 		<div class="content">
+			
 			<header id="header" class="">
 				<i class="icon-align-justify nav-icon" id="open-nav"></i>
 				<span class="welcome">welcome , admin</span>
@@ -61,30 +62,17 @@
 			
 			<article id="article" class="">
 				<div class="users-table">
-					<form method="post" id="form">
+					<form method="post" id="restoreForm">
 						<div class="label">
-							<p>密码修改失败!</p>
+							<p>还原失败!</p>
 						</div>
 						
 						<div class="label">
-							<label for="account">新账号</label>
-							<input type="text" name="account" id="account" placeholder="请输入原密码"/>
-							<span id="tip1">请输入新账号</span>
-						</div>
-						<div class="label">
-							<label for="old">原密码</label>
-							<input type="password" name="old" id="old" placeholder="请输入原密码"/>
-							<span id="tip2">请输入原密码</span>
-						</div>
-						<div class="label">
-							<label for="password">新密码</label>
-							<input type="password" name="password" id="password" placeholder="请输入新密码"/>
-							<span id="tip3">请输入6位以上新密码</span>
-							<span id="tip4">新旧密码不允许一致!</span>
-						</div>
-						<div class="label">
-							<input type="submit" id="login" value="确定" class="btn btn-green"/>
-							<input type="reset" value="重置" class="btn btn-red"/>
+							<span class="backup">还原到</span>
+							<select name="">
+								<option value="">2016-12-01</option>
+							</select>
+							<input type="submit" id="doRestore" value="还原" class="btn btn-green backup-btn"/>
 						</div>
 					</form>
 				</div>
@@ -99,9 +87,7 @@
 				</span>
 			</footer>
 		</div>
-	
+		
 	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
-	<script src="../js/modify.js" type="text/javascript" charset="utf-8"></script>	
 	</body>
 </html>
-

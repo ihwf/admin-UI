@@ -31,6 +31,9 @@ window.onload = function(){
 	openList("userManage","users");
 	openList("adminManage","admin");
 	
+	openList("sys","system");
+	openList("backupAndRestore","backupAndRestoreNav");
+	
 	
 	//定义函数 - 点击导航栏a标签调用ajax获取aticle内容
 	function goUrl($ele) {
@@ -58,6 +61,11 @@ window.onload = function(){
 						li[i].style.backgroundColor = "transparent";
 					}
 					obj.parentNode.style.backgroundColor = "rgba(255,255,255,.5)";
+					
+					sure("restoreForm","submit");
+					sure("backupForm","submit");
+					
+					
 				}
 			}
 			ajax.open("GET",uri);
@@ -106,5 +114,18 @@ window.onload = function(){
 			document.getElementById("article").style.boxShadow = "none";
 		}
 	});
+//	定义函数 - 弹窗确定
+	function sure ($id,$even) {
+		if(document.getElementById($id)){
+			document.getElementById($id).addEventListener($even, function (e) {
+				var sure = confirm("确定?");
+				if(!sure){
+					e.preventDefault();
+				}
+			});
+		}
+	}
+	sure("restoreForm","submit");
+	sure("backupForm","submit");
 	
 }
