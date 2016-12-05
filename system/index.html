@@ -47,29 +47,25 @@
 			
 			<article id="article" class="">
 				<div class="users-table">
-					<div class="fieldset">
-						<fieldset>
-							<legend>数据库备份/还原</legend>
-							<form method="post" id="restoreForm">
-								<div class="label">
-									<p>还原失败!</p>
-								</div>
-								
-								<div class="label">
-									还原到
-									<select name="">
-										<option value="">2016-12-01</option>
-									</select>
-								</div>
-								
-								<div class="label">
-									<a href="" class="btn btn-red backup-btn">备份</a>
-									<input type="submit" id="doRestore" value="还原" class="btn btn-green restore-btn"/>
-								</div>
-							</form>
-						</fieldset>
+					<form method="post" id="restoreForm">
+						<div class="restore-title">
+							<span>备份/还原数据库</span>
+						</div>
+						<div class="label">
+							<p>还原失败!</p>
+						</div>
+						<div class="label">
+							还原到
+							<select name="">
+								<option value="">2016-12-01</option>
+							</select>
+						</div>
 						
-					</div>
+						<div class="label">
+							<a href="" class="btn btn-red backup-btn">备份</a>
+							<input type="submit" id="doRestore" value="还原" class="btn btn-green restore-btn"/>
+						</div>
+					</form>	
 				</div>
 			</article>
 			
